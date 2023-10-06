@@ -131,6 +131,9 @@ class ApiClient(object):
 
         # request url
         url = self.configuration.host + resource_path
+        
+        if _request_timeout is None:
+            _request_timeout = 30
 
         # perform request and return response
         response_data = self.request(
